@@ -1,0 +1,27 @@
+<nav class="navbar bg-body-secondary" >
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color:black;"><strong>Django CRM</strong></a>
+        </li>
+
+        {% if user.is_authenticated %}
+
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="{% url 'add_record' %}">Add Record</a>
+        </li> -->
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}" style="color:black;"><strong>Logout</strong></a>
+          </li>
+
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}" style="color:black;"><strong>Register</strong></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}" style="color:black;"><strong>Login</strong></a>
+        </li>
+        {% endif %}
+      </ul>
+  </nav>
